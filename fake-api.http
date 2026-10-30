@@ -1,1 +1,40 @@
-# For more info on HTTP files go to https://aka.ms/vs/httpfile
+### 1. GET post 1 (Returns 200 OK)
+GET https://jsonplaceholder.typicode.com/posts/1
+
+### 2. GET non-existing post (Returns 404 Not Found)
+GET https://jsonplaceholder.typicode.com/posts/99999
+
+### 3. GET posts filtered by userId (Returns 200 OK with array)
+GET https://jsonplaceholder.typicode.com/posts?userId=1
+
+### 4. POST create new post (Returns 201 Created)
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+
+{
+  "title": "New Compliance Policy",
+  "body": "Ensure all client data is securely logged.",
+  "userId": 1
+}
+
+### 5. PUT update post 1 completely (Returns 200 OK)
+PUT https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated Compliance Policy",
+  "body": "Updated full body text.",
+  "userId": 1
+}
+
+### 6. PATCH update post 1 partially (Returns 200 OK)
+PATCH https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "title": "Patched Title Only"
+}
+
+### 7. DELETE post 1 (Returns 200 OK - Note: 204 No Content is more idiomatic)
+DELETE https://jsonplaceholder.typicode.com/posts/1
